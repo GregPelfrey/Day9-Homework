@@ -1,20 +1,12 @@
-<% @viewpage %>
+<h1>Edit Page</h1>
 
-<form action="/@edit/<% @viewpage content.id %>" method="post">
 
-	<textarea name="@edited" rows = "20" cols= "100"><%=@<input type="hidden" name="_method" value="update">
+<form class="article" action="/edit/<%= @displayeditedpost.id %>" method="post">
+<textarea class="article" name="edited" rows = "20" cols= "100"><%= @displayeditedpost.content %> </textarea>
+<input type="hidden" name="_method" value="patch"></input>
 		<input type = "submit" value="Submit_Changes">
 
+</form>
 
 
 
-
-
-
-
-
-# <form action="/edit" method="patch">
-# 	<textarea rows="20" cols="100" placeholder = "Post Content Here" name = "content"></textarea>
-# 	<br>
-# 	<input type="Submit" value= "Submit Edit">	
-# </form> 

@@ -5,20 +5,20 @@ require 'mysql'
 require 'dm-mysql-adapter'
 
 DataMapper.setup(
-	:default,
+	:default, 
 	'mysql://root@localhost/blogs'
 )
 
 class Blog
 	include DataMapper::Resource
+	DataMapper::Property::String.length(3000)
 	property :id, Serial
 	property :title, String
 	property :created, String
 	property :edited, String
-	property :content, String
+	property :content, Text
 	property :author, String	
 end
-
 
 	DataMapper.finalize.auto_upgrade!
 
@@ -38,10 +38,9 @@ post '/createpost' do
 	time = Time.now
 	@blog.title = params[:title]
 	@blog.created = params[:created]
-	@blog.edited = params[:edited]
-	@blog.created = "#{time.month}, #{time.day}, #{time.year}"
+	@blog.edited = time
+	@blog.created = time
 	@blog.content = params[:content]
-	# @blog.content = params content
 	@blog.author = params[:author]
 	@blog.save
 	redirect to '/'
@@ -52,16 +51,21 @@ get "/displaypost/:id" do
 	erb :viewspage, layout: :layout
 end
 
-get "/viewpost/edit/:id" do
+get "/displaypost/edit/:id" do
 	@displayeditedpost = Blog.get params[:id]
 	erb :edit
 end
 
-
 patch "/edit/:id" do
-	@blog = blog.id params[:content]
-	blog.update
+	editedtime = Time.now
+	@blog = Blog.get params[:id]
+	@blog.update content:params[:edited]
+	@blog.update edited:editedtime
 	redirect to '/'
 end
 
-
+delete '/delete_post/:id' do
+	@blog = Blog.get params[:id]
+	@blog.destroy
+	redirect to '/'
+end

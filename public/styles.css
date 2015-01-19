@@ -1,0 +1,71 @@
+body {
+	background-size: 100%;
+	background-image: url(/chasn.jpg);
+	background-attachment: fixed;
+	font-family: 'Audiowide', cursive;
+	font-size: 16px;
+	font-weight: bolder;
+	margin-right: 375px;
+	margin-left: 375px;
+
+}
+
+h1 {
+	font-family: 'Jolly Lodger', cursive;
+	font-size: 120px;
+	font-weight: bolder;
+	text-align: center;
+}
+
+a {
+	text-align: left;
+	font-family: 'Audiowide', cursive;
+	font-size: 24px;
+}
+
+.title {
+	font-family: 'Audiowide', cursive;
+	font-size: 24px;
+	color: #43007A;	
+}
+
+.article {
+	background-color: rgba(255, 255, 255, 0.4);
+	border-radius: 9px;
+}
+.create {
+	
+	margin-right: 375px;
+	margin-left: 375px;
+	background-color: rgba(255, 255, 255, 0.4);
+}
+
+.content {
+	word-wrap: break-word; width: 650px;
+	max-width: 650px;
+	margin: auto;
+	background-color: rgba(255, 255, 255, 0.9);
+}
+
+.control {
+	display: inline-block;
+	font-size: 16px;
+	font-family:	arial;
+	color: white;
+}
+
+.time {
+	display: inline-block;
+}
+
+.createdtime {
+	font-size: 14px;
+	font-family: helvetica;
+	color: red;
+}
+
+.edittime {
+	font-size: 14px;
+	font-family: helvetica;
+	color: red;
+}

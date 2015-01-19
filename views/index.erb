@@ -1,12 +1,14 @@
-<h1>Our Blog Name</h1>
+<h1>Iron BlogSpot</h1>
 
 
 <% @blog.each do |article|%>
-	<ul>
-		<li><a href="/displaypost/<%= article.id %>"><%= article.title%></a></li>
-		<li><%= article.author %></li>
-		<li><%= article.created %></li>
-		<li><%= article.edited %></li>
-		<li><%= article.content %></li>
-	</ul>
+	
+	<div class="article">
+		<ul>
+			<li><a href="/displaypost/<%= article.id %>"><%= article.title%></a></li>
+			<li><%= article.author %></li>
+			<li class= "edittime">Last Edited: <%= article.edited %></li>
+			<li class= "createdtime">Created: <%= article.created %></li>
+		</ul><br>
+	</div>
 	<% end %>

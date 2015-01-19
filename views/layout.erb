@@ -1,15 +1,21 @@
 <html>
 <head>
 	<title>Blog</title>
+	<link rel="stylesheet" type="text/css" href="/styles.css">
+	<link href='http://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Jolly+Lodger' rel='stylesheet' type='text/css'>
+
+
 </head>
 <body>
 
-<h1>Layout page test</h1>
-<a href="/">Home</a>
-<a href="/create">Create a new post!</a>
+	<a href="/">Home</a>
+	<a href="/create">Create a new post!</a>
 
+	<div class="blogview">
+	<%= yield %>
+	</div>
 
-<%= yield %>
 
 </body>
 </html>
